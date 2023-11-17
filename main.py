@@ -1,3 +1,8 @@
+
+#############################################
+################ НЕ ВАЖНО ###################
+#############################################
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
@@ -25,8 +30,7 @@ sleep(2)
 
 
 
-def getlink(link):
-    driver.get(link)
+
 
 
 
@@ -34,21 +38,30 @@ sys.setrecursionlimit(2147483647)
 init()
 
 
-options = webdriver.ChromeOptions()
+
+#############################################
+#############################################
+#############################################
+
+
+def getlink(link):
+    driver.get(link)
+
+
+################# ПОДКЛЮЧАЮ ХРОМ И ДЕЛАЮ ЧТО БЫ В КОНСОЛИ НЕ БЫЛО ЛИШНЕГО #################
+options = webdriver.ChromeOptions() 
 
 for messages_eror in [0,1,2,3,4]:
     options.add_argument(f"log-level={messages_eror}")
 options.add_argument("--headless")
 
 driver = webdriver.Chrome(options=options)
-print(Fore.GREEN + "Дождитесь пока откроется страница." + Fore.RESET, '\n\n')
 
-
-
+###########################################################################################
 
 
 colvo = int(input("Введите сколько всего заданий: "))
-linkk = 'https://kpolyakov.spb.ru/school/ogetest2020/b9.htm?roistat_visit=3443029'
+linkk = 'https://kpolyakov.spb.ru/school/ogetest2020/b9.htm?roistat_visit=3443029' # тут ваша ссылка
 
 getlink(linkk)
 
